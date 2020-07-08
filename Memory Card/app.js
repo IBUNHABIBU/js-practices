@@ -44,7 +44,7 @@ function createCard(data,index){
     card.innerHTML = 
     `
             <div class="inner-card">
-                <div class="inner-card-fron">
+                <div class="inner-card-front">
                     <p>
                    ${data.question}
                     </p>
