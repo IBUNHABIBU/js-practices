@@ -17,13 +17,13 @@ const cardsEl = [];
 // store cards data
 const cardsData = [
     {
-        question: "What must answer begin with?",
+        question: "What must a variable begin with?",
         answer: 'A letter, $ or _'
-    }
+    },
     {
         question: "What is a variable?",
         answer: 'Container for a piece of data'
-    }
+    },
     {
         question: "Example of case sensitive variable",
         answer: 'This is variable'
@@ -35,7 +35,7 @@ function createCards(){
     cardsData.forEach((data,index)=>createCard(data,index));
 }
 // creat a single card 
-function createCard(){
+function createCard(data,index){
     const card = document.createElement('div');
     card.classList.add('card');
     if (index===0){
@@ -55,16 +55,16 @@ function createCard(){
                     </p>
                 </div>
             </div>
-    `
+    `;
     card.addEventListener('click',()=>{
         card.classList.toggle('show-answer');
     })
                 // add to Dom cards 
                 cardsEl.push(card);
                 cardsContainer.appendChild(card);
-updatCurrentText();
+updateCurrentText();
 }
 createCards();
-function updatCurrentText(){
+function updateCurrentText(){
     currentEl.innerText = `${currentActiveCard+1}/${cardsEl.length}`
 }
