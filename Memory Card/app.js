@@ -123,3 +123,10 @@ addCardBtn.addEventListener('click',()=>{
         setCardsData(cardsData);
     }
 })
+
+// clear cards
+clearBtn.addEventListener('click',()=>{
+    localStorage.clear();
+    cardsContainer.innerHTML = '';
+    window.location.reload();
+})
