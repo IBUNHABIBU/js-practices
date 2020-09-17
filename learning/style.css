@@ -6,13 +6,19 @@
   
 }
 body{
-  background-color: black;
+  /* background-color: black; */
 }
-form input{
+ input{
   height: 2rem;
   width: 20rem;
 }
-form button{
+input:focus{
+
+}
+ button{
   height: 2.4rem;
   font-size: 1rem;
+}
+.error {
+  display: none;
 }
