@@ -1,0 +1,18 @@
+.tasker{
+  margin: 10rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+body{
+  background-color: black;
+}
+form input{
+  height: 2rem;
+  width: 20rem;
+}
+form button{
+  height: 2.4rem;
+  font-size: 1rem;
+}
