@@ -1,4 +1,9 @@
 let tasker = {
+  construct: function(){
+    this.selectedElement();
+    this.bindEvent();
+    this.scanTaskList();
+  },
   selectedElement: function (){
     this.taskInput = document.getElementById('input-task');
     this.taskList = document.getElementById('tasks');
@@ -15,6 +20,7 @@ let tasker = {
     taskValue = document.createTextNode(this.taskInput.value);
     taskButton = document.createElement('button');
     taskTrash = document.createElement('i');
+    taskButton.className = 'btn-trash';
     taskTrash.setAttribute('class','fa fa-trash');
     taskButton.appendChild(taskTrash);
     taskListItem.appendChild(taskCheckBox);
@@ -33,11 +39,41 @@ let tasker = {
     } else {
       this.buildTask();
       this.taskInput.value = '';
+      this.scanTaskList();
     }
   }, 
   enterKey: function(e){
     if(e.keyCode === 13 ){
       this.addTask();
     }
+  }, 
+  bindEvent: function(){
+    this.addButton.onclick= this.addTask.bind(this);
+    this.taskInput.onkeypress = this.enterKey.bind(this);
+  }, 
+  scanTaskList: function(){
+    let taskListItem, checkBox, deleteButton;
+    for( i = 0; i< this.taskListChildren.length; i++){
+      taskListItem = this.taskListChildren[i];
+      checkBox = taskListItem.getElementsByTagName('input')[0];
+      deleteButton = taskListItem.getElementsByTagName('button')[0];
+      checkBox.onclick = this.completeTask.bind(this, taskListItem, checkBox);
+      deleteButton.onclick = this.deleteTask.bind(this, i);
+
+    }
+  },
+  deleteTask: function(i){
+    this.taskListChildren[i].remove();
+    this.scanTaskList();
+  }, 
+  completeTask: function(taskListItem, checkBox){
+    if(checkBox.checked){
+      taskListItem.className = 'task completed';
+    } else {
+      this.incompleteTask(taskListItem);
+    }
+  },
+  incompleteTask: function(taskListItem){
+    taskListItem.className = 'task';
   }
 }
