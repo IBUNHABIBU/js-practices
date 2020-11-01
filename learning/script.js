@@ -46,14 +46,14 @@ let tasker = {
     if(e.keyCode === 13 ){
       this.addTask();
     }
-  }, 
+  },
   bindEvent: function(){
     this.addButton.onclick= this.addTask.bind(this);
     this.taskInput.onkeypress = this.enterKey.bind(this);
   }, 
   scanTaskList: function(){
     let taskListItem, checkBox, deleteButton;
-    for( i = 0; i< this.taskListChildren.length; i++){
+    for( let i = 0; i< this.taskListChildren.length; i++){
       taskListItem = this.taskListChildren[i];
       checkBox = taskListItem.getElementsByTagName('input')[0];
       deleteButton = taskListItem.getElementsByTagName('button')[0];

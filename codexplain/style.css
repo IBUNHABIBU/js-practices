@@ -1,0 +1,33 @@
+.container{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.add-to-do{
+  color: blue;
+}
+li{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(161, 160, 160);
+  width: 150%;
+}
+li p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+input{
+  margin-left: 5rem;
+}
+li .completed {
+  color: red;
+}
+i:hover{
+  cursor: pointer;
+}
+.fa-trash.refresh{
+  color: red;
+}
