@@ -53,3 +53,8 @@ https://stackoverflow.com/questions/40271230/how-to-run-eslint-fix-from-npm-scri
 `npm run lint -- --fix`
 
 https://stackoverflow.com/questions/43031126/jsx-not-allowed-in-files-with-extension-js-with-eslint-config-airbnb
+
+## How to update wsl to wsl2 
+1. Enable virtualization 
+  - I'm using lenovo win10 on startup I pressed enter then f1 to go to bios then enabled intel virtualization using BIOS
+  - 
