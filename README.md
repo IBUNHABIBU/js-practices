@@ -62,3 +62,6 @@ https://stackoverflow.com/questions/43031126/jsx-not-allowed-in-files-with-exten
 ## Command to see number of commits within a specific day
 git rev-list --count HEAD --since="Jan 29 2021" --before="June 29 2021"
 
+## no of commits by username
+git shortlog -s -n
+
