@@ -57,4 +57,8 @@ https://stackoverflow.com/questions/43031126/jsx-not-allowed-in-files-with-exten
 ## How to update wsl to wsl2 
 1. Enable virtualization 
   - I'm using lenovo win10 on startup I pressed enter then f1 to go to bios then enabled intel virtualization using BIOS
-  - 
+
+
+## Command to see number of commits within a specific day
+git rev-list --count HEAD --since="Jan 29 2021" --before="June 29 2021"
+
