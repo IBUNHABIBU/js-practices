@@ -65,3 +65,7 @@ git rev-list --count HEAD --since="Jan 29 2021" --before="June 29 2021"
 ## no of commits by username
 git shortlog -s -n
 
+$ git shortlog -s -n --after="2021-07-03 00:00" --before="2021-07-03 23:59"
+
+git rev-list --count HEAD --after="2021-07-03 00:00" --before="2021-07-03 23:59"
+
