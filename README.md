@@ -69,3 +69,16 @@ $ git shortlog -s -n --after="2021-07-03 00:00" --before="2021-07-03 23:59"
 
 git rev-list --count HEAD --after="2021-07-03 00:00" --before="2021-07-03 23:59"
 
+### How to install postgresql on wls
+https://www.youtube.com/watch?v=LsPBp3x7Nsw&t=23s 
+
+I have also got this error:
+
+`sudo apt-get update `
+`E: Type 'mongodb-org/4.2' is not known on line 2 in source list /etc/apt/sources.list.d/mongodb-org-4.2.list
+E: The list of sources could not be read.
+I used following command -`
+
+`ls /etc/apt/sources.list.d/` you can see your all .list file like ls /etc/apt/sources.list.d/getdeb.list openjdk-r-ppa-trusty.list mongodb-org-4.2.list pcf-miro-releases-trusty.list nginx.list webupd8team-java-trusty.list
+choose one of them have problem and remove using following command 2. `sudo rm -r /etc/apt/sources.list.d/mongodb-org-4.2.list`
+
