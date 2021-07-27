@@ -82,3 +82,9 @@ I used following command -`
 `ls /etc/apt/sources.list.d/` you can see your all .list file like ls /etc/apt/sources.list.d/getdeb.list openjdk-r-ppa-trusty.list mongodb-org-4.2.list pcf-miro-releases-trusty.list nginx.list webupd8team-java-trusty.list
 choose one of them have problem and remove using following command 2. `sudo rm -r /etc/apt/sources.list.d/mongodb-org-4.2.list`
 
+Got to postgresql database
+do the folowing commands
+` sudo -u postgres psql` enter the pg database environment
+`\l` check the list of all available db with their username
+
+
