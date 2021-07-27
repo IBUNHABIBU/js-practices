@@ -85,6 +85,10 @@ choose one of them have problem and remove using following command 2. `sudo rm -
 Got to postgresql database
 do the folowing commands
 ` sudo -u postgres psql` enter the pg database environment
+
 `\l` check the list of all available db with their username
+
+go to database.yml and set the username to be the same as you see in the list with password
+
 
 
