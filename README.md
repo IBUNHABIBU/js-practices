@@ -90,5 +90,33 @@ do the folowing commands
 
 go to database.yml and set the username to be the same as you see in the list with password
 
+### Steps to create the rails app using postgresql
+1. 
+`rails new myapp -d postgresql`
+
+2. go to config then database.yml and paste the following code 
+
+`adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: Voda#0763
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>`
+  
+  3. type the following command
+
+`sudo service postgresql start`
+
+4. `rails db:setup`
+5. `rails db:create`
+6. `rails db:migrate`
+7. Restart the serveer using `rails server`
+
+
+  
+  
+
 
 
