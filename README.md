@@ -96,18 +96,18 @@ go to database.yml and set the username to be the same as you see in the list wi
 
 2. go to config then database.yml and paste the following code 
 
-`adapter: postgresql
+`adapter: postgresql`
 
-  encoding: unicode
+  `encoding: unicode`
   
-  host: localhost
+  `host: localhost`
   
-  username: postgres
+  `username: postgres`
   
-  password: Voda#0763`
+  `password: Voda#0763`
   
-  `# For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling`
+  `# For details on connection pooling, see Rails configuration guide`
+  `# https://guides.rubyonrails.org/configuring.html#database-pooling`
   
   `pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>`
   
