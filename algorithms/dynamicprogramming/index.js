@@ -111,3 +111,10 @@ console.log(howSum(7, [2, 3]));
 console.log(howSum(7, [4,3,7]));
 console.log(howSum(60, [7, 11]));
 console.log(howSum(300, [7, 14]));
+
+console.log("")
+console.log("***************** bestSum *************************")
+// write a function bestSum(target, numbers) that takes in target sum and array of numbers as argument
+// The function should return a shortest combination of numbers that add up to the target 
+// if there is a tie you may return any one
+// bestSum(7, [2,4,3,7]) true
