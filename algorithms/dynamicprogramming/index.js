@@ -118,29 +118,30 @@ console.log("***************** bestSum *************************")
 // The function should return a shortest combination of numbers that add up to the target 
 // if there is a tie you may return any one
 // bestSum(7, [2,4,3,7]) true
-const bestSum = (target, numbers) => {
+const bestSum = (target, numbers, memo = {}) => {
+  if(target in memo) return memo[target];
   if (target === 0) return [];
   if (target < 0) return null;
   let shortestCombination = null;
 
   for(let num of numbers) {
     const remainder = target - num;
-    const remainderCombination = bestSum(remainder, numbers);
+    const remainderCombination = bestSum(remainder, numbers, memo);
     if(remainderCombination !== null) {
       const combination = [...remainderCombination, num];
       if(shortestCombination === null || combination.length < shortestCombination.length) {
         shortestCombination = combination;
       }
     
-    return combination;
     }
   }
-  return null;
+  memo[target] = shortestCombination;
+  return shortestCombination;
 }
 console.log(bestSum(7, [5, 3, 4, 7]));
 console.log(bestSum(8, [2, 3, 5]));
 console.log(bestSum(8, [1, 4, 5, 7, 11]));
-console.log(bestSum(100, [1, 2, 5, 25, 7, 14]));
+console.log(bestSum(100, [1, 2, 5, 25]));
 
 console.log("")
 console.log("***************** bestSum *************************")
