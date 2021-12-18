@@ -260,3 +260,10 @@ const gridTravelerTab = (m, n) => {
   return table[m][n];
 }
 console.log(gridTravelerTab(3,3));
+
+console.log("  ")
+console.log("****************************Can Sum***************************");
+
+const canSumTabulation = (target, numbers) => {
+  
+}
