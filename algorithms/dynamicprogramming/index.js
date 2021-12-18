@@ -182,8 +182,16 @@ const howCanConstruct = (target, wordBank) => {
   let totalCount = 0;
   for(let word of wordBank) {
     if(target.indexOf(word) === 0) {
-      const suffix = target.slice(word);
-      howCanConstruct(suffix, wordBank)
+      const suffix = target.slice(word.length);
+     const numberOfWays = howCanConstruct(suffix, wordBank);
+     totalCount += numberOfWays;
     }
   }
+  return totalCount;
 }
+
+
+console.log(howCanConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']));
+console.log(howCanConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
+console.log(howCanConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
+console.log(howCanConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
