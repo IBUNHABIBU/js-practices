@@ -229,10 +229,16 @@ console.log(allConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o',
 console.log(allConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
 
 const fibTab = (number) => {
-  const table = Array(n+1).fill(0);
+  const table = Array(number+1).fill(0);
   table[1] = 1;
-  for(let i = 0; i<=n; i++) {
-    
+  for(let i = 0; i<=number; i++) {
+    table[i+1] += table[i];
+    table[i+1] += table[i];
   }
-
+  return table[number];
 }
+
+console.log("****************************TABULATION***************************");
+console.log("****************************FIBONACCI NUMBER TABULATION***************************");
+console.log(fibTab(6));
+console.log(fibTab(60));
