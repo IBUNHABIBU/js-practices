@@ -173,20 +173,22 @@ console.log(canConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius',
 
 console.log("")
 console.log("***************** howcanConstruct *************************")
-// write a function canConstruct(target, wordBank) that accepts accepts a target string and array of string
+// write a function howConstruct(target, wordBank) that accepts accepts a target string and array of string
 // The function should return the numbers of ways that the target can be constructed by concatenating 
 // elements of the wordbank array 
 
-const howCanConstruct = (target, wordBank) => {
+const howCanConstruct = (target, wordBank, memo = {}) => {
+  if(target in memo) return memo[target];
   if(target === '') return 1;
   let totalCount = 0;
   for(let word of wordBank) {
     if(target.indexOf(word) === 0) {
       const suffix = target.slice(word.length);
-     const numberOfWays = howCanConstruct(suffix, wordBank);
+     const numberOfWays = howCanConstruct(suffix, wordBank, memo);
      totalCount += numberOfWays;
     }
   }
+  memo[target] = totalCount;
   return totalCount;
 }
 
@@ -195,3 +197,42 @@ console.log(howCanConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']));
 console.log(howCanConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
 console.log(howCanConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
 console.log(howCanConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
+
+console.log("")
+console.log("***************** howcanConstruct *************************")
+// write a function AllConstruct(target, wordBank) that accepts accepts a target string and array of string
+// The function should return a 2D array containing all of the ways that the target can be constructed by concatenating 
+// elements of the wordbank array. Each element of the 2D array should represent one combination that construct the target
+// we can reuse element of wordbank as many times as you need
+
+const allConstruct = (target, wordBank, memo = {}) => {
+  if(target in memo ) return memo[target];
+  const result = [];
+  if (target === '') return [[]];
+
+  for(let word of wordBank) {
+    if(target.indexOf(word) === 0) {
+      const suffix = target.slice(word.length);
+      const suffixWays = allConstruct(suffix, wordBank, memo);
+      const targetWays = suffixWays.map( way => [word, ...way]);
+      result.push(...targetWays);
+    }
+  }
+  memo[target] = result;
+  return result;
+}
+
+
+console.log(allConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']));
+console.log(allConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
+console.log(allConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
+console.log(allConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
+
+const fibTab = (number) => {
+  const table = Array(n+1).fill(0);
+  table[1] = 1;
+  for(let i = 0; i<=n; i++) {
+    
+  }
+
+}
