@@ -147,9 +147,9 @@ console.log("")
 console.log("***************** canConstruct *************************")
 // write a function canConstruct(target, wordBank) that accepts accepts a target string and array of string
 // The function should return a boolean indicating whether or not the target can be constructed by concatenating 
-// element elements of the wordbank array 
-// u may reuse element as many as u can
-const canConstruct = (target, wordBank) => {
+// elements of the wordbank array 
+const canConstruct = (target, wordBank, memo= {}) => {
+  if(target in memo) return memo[target];
   if(target === '') {
     return true
   }
@@ -157,15 +157,33 @@ const canConstruct = (target, wordBank) => {
   for (let word of wordBank) {
     if(target.indexOf(word) === 0) {
       const suffix = target.slice(word.length);
-      if(canConstruct(suffix, wordBank) === true){
+      if(canConstruct(suffix, wordBank, memo) === true){
+        memo[target] = true;
         return true;
       }
     }
   }
-
+  memo[target] = false;
   return false;
 }
 console.log(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']));
 console.log(canConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
 console.log(canConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
 console.log(canConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
+
+console.log("")
+console.log("***************** howcanConstruct *************************")
+// write a function canConstruct(target, wordBank) that accepts accepts a target string and array of string
+// The function should return the numbers of ways that the target can be constructed by concatenating 
+// elements of the wordbank array 
+
+const howCanConstruct = (target, wordBank) => {
+  if(target === '') return 1;
+  let totalCount = 0;
+  for(let word of wordBank) {
+    if(target.indexOf(word) === 0) {
+      const suffix = target.slice(word);
+      howCanConstruct(suffix, wordBank)
+    }
+  }
+}
