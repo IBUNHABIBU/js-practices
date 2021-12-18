@@ -228,7 +228,7 @@ console.log(allConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'bo
 console.log(allConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
 console.log(allConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
 
-
+console.log("\n");
 console.log("****************************TABULATION***************************");
 console.log("****************************FIBONACCI NUMBER TABULATION***************************");
 
@@ -244,6 +244,11 @@ const fibTab = (number) => {
 
 console.log(fibTab(6));
 console.log(fibTab(60));
+console.log("  ")
+console.log("****************************Grid Traveler***************************");
 
-console.log("****************************TABULATION***************************");
-console.log(fibTab(60));
+const gridTravelerTab = (m, n) => {
+  const table = Array(m+1).fill().map(() => Array(n+1).fill(0));
+  console.log(table)
+}
+console.log(gridTravelerTab(3,2));
