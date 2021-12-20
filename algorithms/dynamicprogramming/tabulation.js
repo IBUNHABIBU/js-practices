@@ -45,20 +45,22 @@ console.log(countConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o
 console.log(countConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
 
 console.log("");
-const countConstruct = (target, wordBank) => {
- const table = Array(target.length + 1).fill(0);
- table[0] = 1;
+console.log("*********************** All Can construct **************************")
+const allCanConstruct = (target, wordBank) => {
+ const table = Array(target.length + 1).fill().map(() => []);
+ table[0] = [[]];
  for(let i = 0; i <= target.length; i++) {
   for(let word of wordBank) {
     if(target.slice(i, i + word.length) === word) {
-     table[i + word.length] += table[i];
+     const newCombination = table[i].map(subArr => [...subArr, word]);
+     table[i + word.length].push(...newCombination);
     }
   }
  }
  return table[target.length];
 }
-console.log(countConstruct('abcdef', ['cd', 'def','ab', 'abc',  'abcd']));
-console.log(countConstruct('juma', ['elinu', 'kp', 'isshqu']));
-console.log(countConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
-console.log(countConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
-console.log(countConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
+console.log(allCanConstruct('abcdef', ['cd', 'def','ab', 'abc',  'abcd']));
+console.log(allCanConstruct('juma', ['elinu', 'kp', 'isshqu']));
+console.log(allCanConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
+console.log(allCanConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
+console.log(allCanConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
