@@ -17,8 +17,15 @@ const canConstruct = (target, wordBank) => {
   }
   return table[target.length];
 }
-console.log(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']));
+console.log(canConstruct('abcdef', ['cd', 'def','ab', 'abc',  'abcd']));
 console.log(canConstruct('juma', ['elinu', 'kp', 'isshqu']));
 console.log(canConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
 console.log(canConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
 console.log(canConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
+
+console.log("");
+console.log("*************************** count Construct ********************************************")
+
+const countConstruce = (target, wordBank) => {
+
+}
