@@ -26,6 +26,19 @@ console.log(canConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius',
 console.log("");
 console.log("*************************** count Construct ********************************************")
 
-const countConstruce = (target, wordBank) => {
-
+const countConstruct = (target, wordBank) => {
+  const table = Array(target + 1).fill(0);
+  for(let i = 0; i <= target.length; i++) {
+   for(let word of wordBank) {
+     if(target.slice(i, word.length) === word) {
+      table[i + word.length] += table[i];
+     }
+   }
+  }
+  return table[target.length];
 }
+console.log(countConstruct('abcdef', ['cd', 'def','ab', 'abc',  'abcd']));
+console.log(countConstruct('juma', ['elinu', 'kp', 'isshqu']));
+console.log(countConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']));
+console.log(countConstruct('enterapotentpot', ['a','p', 'ent', 'enter', 'ot', 'o', 't']));
+console.log(countConstruct('eleuteliusegdiusgangatasjinjajinja', ['ele', 'telius', 'egdius', 'u', 'gangatas', 'jinja']));
