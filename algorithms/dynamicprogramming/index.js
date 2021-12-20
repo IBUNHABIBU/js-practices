@@ -262,8 +262,38 @@ const gridTravelerTab = (m, n) => {
 console.log(gridTravelerTab(3,3));
 
 console.log("  ")
-console.log("****************************Can Sum***************************");
+console.log("****************************Can Sum ***************************");
 
 const canSumTabulation = (target, numbers) => {
-  
+  const table = Array(target + 1).fill(false);
+  table[0] = true;
+  for(let i=0; i<=target; i++) {
+    if(table[i] === true) {
+    for(let num of numbers) {
+      table[i+num] = true;
+    }
+  }
+  }
+  return table[target];
 }
+
+console.log(canSumTabulation(7, [3,5,4]));
+
+console.log("  ")
+console.log("****************************How Sum ***************************");
+const howSumTabulation = (target, numbers) => {
+  const table = Array(target + 1).fill(null);
+  table[0] = [];
+  for(let i=0; i<= target; i++) {
+    if(table[i] !== null) {
+      table[i+num] = [...table[i], num];
+    }
+  }
+  return table[target];
+}
+console.log(howSumTabulation(7, [3,5,4]));
+
+console.log("  ")
+console.log("****************************best Sum ***************************");
+
+const best
