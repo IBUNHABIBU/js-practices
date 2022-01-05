@@ -1,3 +1,4 @@
+// Normal way
 class User {
  constructor(id, name) {
   this.id = id;
@@ -26,7 +27,22 @@ function printUser(id) {
  */
 
    let name = 'Guest';
-   if (user !== null && user.name !== null) name = user.name;
-   console.log('Hello' + name);
-   
+   if (user != null && user.name != null) name = user.name;
+   console.log('Hello  ' + name);
+
+   /*
+   this will throw an error if we don't first check that the user object has this fn available and isn't null
+   this is a lot of extra code to add in every time we want to check the user access
+   and could cause bug that are easy to miss if we forget to do the null check
+   */
+
+   if(user != null && user.hasAccess != null && user.hasAccess()) {
+    console.log('You have access');
+   } else {
+    console.log('You are not allowed');
+   }
 }
+
+printUser(1);
+printUser(2);
+printUser(4);
