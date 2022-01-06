@@ -13,3 +13,6 @@ class User {
   this.Address = address;
  }
 }
+
+const user = new User('John')
+console.log(user);
