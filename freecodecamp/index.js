@@ -50,6 +50,8 @@ console.log(FullName);
 
 var myArr = [1,3, "John", true];
 myArr.push("Doe");
+myArr.push(["Jane", "Domino"]);
+myArr.push("fue", 4)
 myArr.pop();
 myArr.unshift("Doe");
 myArr.shift();
