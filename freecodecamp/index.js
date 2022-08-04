@@ -47,3 +47,12 @@ console.log(FullName[FullName.length - 1]);
 // strings are immutable
 FullName[0] = "d";
 console.log(FullName);
+
+var myArr = [1,3, "John", true];
+myArr.push("Doe");
+myArr.pop();
+myArr.unshift("Doe");
+myArr.shift();
+myArr[2] = "Jane"; // replaces the value at index 2 with Jane
+var nestedArray = [["name","juma"], ["age", 30]];
+nestedArray[0][0];
