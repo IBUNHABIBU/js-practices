@@ -41,12 +41,12 @@ myString = `I am a "template literal" inside a "template literal" string`;
 
 // Concatenation
 var FullName = "John" + " " + "Doe";
-console.log(FullName.length);
-console.log(FullName[0]);
-console.log(FullName[FullName.length - 1]);
+FullName.length;
+FullName[0];
+FullName[FullName.length - 1];
 // strings are immutable
 FullName[0] = "d";
-console.log(FullName);
+FullName;
 
 var myArr = [1,3, "John", true];
 myArr.push("Doe");
@@ -58,3 +58,23 @@ myArr.shift();
 myArr[2] = "Jane"; // replaces the value at index 2 with Jane
 var nestedArray = [["name","juma"], ["age", 30]];
 nestedArray[0][0];
+
+// Function
+var myGlobal = 10;
+function func1() {
+    oopsGlobal = 5;
+}
+
+function func2() {
+    var output = "";
+    if (typeof myGlobal != "undefined") {
+        output += "myGlobal: " + myGlobal;
+    }
+    if (typeof oopsGlobal != "undefined") {
+        output += "oopsGlobal: " + oopsGlobal;
+    }
+    console.log(output);
+}
+func1()
+func2();
+
