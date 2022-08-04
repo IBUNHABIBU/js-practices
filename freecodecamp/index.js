@@ -78,3 +78,9 @@ function func2() {
 func1()
 func2();
 
+var outwear = "T-shirt"
+function wearTShirt() {
+    var outwear = "sweater"; // local variable is preferered over global variable
+    return outwear;
+}
+wearTShirt()
