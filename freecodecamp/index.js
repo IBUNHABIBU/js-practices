@@ -102,4 +102,5 @@ function caseInSwitch(val) {
             break;
     }
     return answer;
-}
+} // end of caseInSwitch
+caseInSwitch(1);
