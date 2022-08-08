@@ -104,3 +104,10 @@ function caseInSwitch(val) {
     return answer;
 } // end of caseInSwitch
 caseInSwitch(1);
+
+//Objects
+var john = {
+    firstName: "John",
+    lastName: "Doe",
+    birthYear: 1990,
+}
