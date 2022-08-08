@@ -116,3 +116,13 @@ var john = {
         temp: 29
     }
 }
+john.firstName;
+john.family[2];
+john.location.city;
+
+var ourDog = {
+    "name": "Camper",
+    "age": "2",
+}
+console.log("Dogs name", ourDog.name);
+ourDog["name"];
