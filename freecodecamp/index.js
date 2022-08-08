@@ -122,7 +122,9 @@ john.location.city;
 
 var ourDog = {
     "name": "Camper",
-    "age": "2",
+    "id number": "2",
 }
 console.log("Dogs name", ourDog.name);
 ourDog["name"];
+var badge = "id number"
+console.log("Dogs id number", ourDog[badge]);
