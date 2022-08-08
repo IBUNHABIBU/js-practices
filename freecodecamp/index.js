@@ -131,3 +131,17 @@ console.log("Dogs id number", ourDog[badge]);
 
 delete ourDog.name;
 console.log(ourDog);
+
+function phoneticLookup(val) {
+    var result = "";
+    var lookup = {
+        "alpha": "Adams",
+        "bravo": "Boston",
+        "charlie": "Chicago",
+        "delta": "Denver",
+        "echo": "Easy",
+        "foxtrot": "Frank"
+    }
+    result = lookup[val];
+    return result;
+}
