@@ -156,3 +156,15 @@ function checkObj(checkProperty) {
     }
 }
 console.log(checkObj("firstName"));
+
+var myMusic = [
+    {
+        "artist": "Billy Joel",
+        "title": "Piano man",
+    }, 
+    {
+        "artist": "Harmorapa",
+        "title": "Mr Kiki"
+    }
+
+]
