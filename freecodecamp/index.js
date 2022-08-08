@@ -134,6 +134,7 @@ console.log(ourDog);
 
 function phoneticLookup(val) {
     var result = "";
+    // insead of switch statement
     var lookup = {
         "alpha": "Adams",
         "bravo": "Boston",
@@ -146,3 +147,11 @@ function phoneticLookup(val) {
     return result;
 }
 phoneticLookup("charlie");
+
+function checkObj(checkProperty) {
+    if (john.hasOwnProperty(checkProperty)) {
+        return john[checkProperty];
+    } else {
+        return "Not Found";
+    }
+}
