@@ -145,3 +145,4 @@ function phoneticLookup(val) {
     result = lookup[val];
     return result;
 }
+phoneticLookup("charlie");
