@@ -128,3 +128,6 @@ console.log("Dogs name", ourDog.name);
 ourDog["name"];
 var badge = "id number"
 console.log("Dogs id number", ourDog[badge]);
+
+delete ourDog.name;
+console.log(ourDog);
