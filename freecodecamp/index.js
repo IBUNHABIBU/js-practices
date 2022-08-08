@@ -155,3 +155,4 @@ function checkObj(checkProperty) {
         return "Not Found";
     }
 }
+console.log(checkObj("firstName"));
