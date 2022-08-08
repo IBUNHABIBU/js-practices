@@ -110,4 +110,9 @@ var john = {
     firstName: "John",
     lastName: "Doe",
     birthYear: 1990,
+    family: ["Jane", "Mark", "Bob", "Emily"],
+    location: {
+        city: "New York",
+        temp: 29
+    }
 }
