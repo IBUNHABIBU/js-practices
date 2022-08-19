@@ -164,7 +164,8 @@ var myMusic = [
     }, 
     {
         "artist": "Harmorapa",
-        "title": "Mr Kiki"
+        "title": "Mr Kiki",
+        list: [1,5,4]
     }
 
 ]
