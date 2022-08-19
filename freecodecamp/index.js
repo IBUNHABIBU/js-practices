@@ -302,3 +302,16 @@ function lookUpProfile(name, prop) {
     return "No such contact";
 }
 console.log(lookUpProfile("Akira", "likes"));
+
+function randomizer(arr) {
+    var random = Math.floor(Math.random() * arr.length);
+    return arr[random];
+}
+console.log(randomizer(["John", "Jill", "Harry"]));
+var randBtn1and19 = Math.floor(Math.random() * 20);
+function ourRandomRange (ourMin, ourMax) {
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+function randomRange(ourMin, ourMax) {
+    
+}
