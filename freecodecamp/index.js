@@ -230,6 +230,15 @@ while (i < 10) {
     i++;
 }
 
+var j = 10;
+var doArr = [];
+do {
+    doArr.push(j)
+    j++;
+} while (j < 5);
+
+console.log("Do while loop,", doArr);
+
 // for loop
 var myArrContainer = [];
 for (var i = 0; i < 10; i++) {
