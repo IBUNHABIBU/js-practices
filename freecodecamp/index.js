@@ -205,6 +205,35 @@ var collection = {
 
 collection["2548"]["tracks"][1];
 var collectionCopy = JSON.parse(JSON.stringify(collection));
-function upadeRecord() {
+function upadeRecord(id, prop, value) {
+    if (value == "") {
+        delete collection[id][prop];
+    } else if (prop == "tracks") {
+        collection[id][prop] = collection[id][prop] || [];
+        collection[id][prop].push(value);
+    } else {
+        collection[id][prop] = value;
+    }
     return collection;
 }
+
+upadeRecord(5439, "artist", "ABBA");
+console.log('collection', collection);
+upadeRecord(5439, "tracks", "Take a Chance on Me");
+console.log('collection', collectionCopy);
+
+// while loop
+var i = 0;
+var arrContainer = [];
+while (i < 10) {
+    arrContainer.push(i);
+    i++;
+}
+
+// for loop
+var myArrContainer = [];
+for (var i = 0; i < 10; i++) {
+    arrContainer.push(i);
+}
+
+
