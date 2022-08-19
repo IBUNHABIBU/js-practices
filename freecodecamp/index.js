@@ -244,3 +244,5 @@ for (var i = 0; i < ourArr.length; i ++) {
 
 console.log("Total", ourTotal);
 
+
+
