@@ -170,3 +170,38 @@ var myMusic = [
 
 ]
 
+var collection = {
+    "2548": {
+        "album": "slipery when wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let it rock",
+            "You give love a bad name"
+        ]
+    },
+    "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "1999",
+            "Little Red Corvette"
+        ]
+    },
+    "1245": {
+        "artist": "Robert Palmer",
+        "tracks": [
+            "Stop"
+        ]
+    },
+    "5439": {
+        "album": "ABBA Gold",
+        "artist": "ABBA",
+        "tracks": [
+            "Dancing with a Dork",
+            "Take a Chance on Me"
+        ]
+    }
+}
+
+collection["2548"]["tracks"][1];
+var collectionCopy = JSON.parse(JSON.stringify(collection));
