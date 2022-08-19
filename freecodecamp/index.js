@@ -205,3 +205,6 @@ var collection = {
 
 collection["2548"]["tracks"][1];
 var collectionCopy = JSON.parse(JSON.stringify(collection));
+function upadeRecord() {
+    return collection;
+}
