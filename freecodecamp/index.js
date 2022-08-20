@@ -320,3 +320,9 @@ function convertToInteger(str, base = 10) {
 console.log(convertToInteger("4"))
 console.log(convertToInteger("1100100", 2))
 console.log(convertToInteger("1100100"))
+
+// tenary operator 
+
+function checkValues(a,b) {
+    return a === b ? "They match" : b < 0 ? "Things deffer" : "they are big enough"
+}
