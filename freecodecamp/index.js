@@ -326,3 +326,12 @@ console.log(convertToInteger("1100100"))
 function checkValues(a,b) {
     return a === b ? "They match" : b < 0 ? "Things deffer" : "they are big enough"
 }
+
+// ES6 
+
+let catName = "Quincy"
+let quote;
+
+//  you can not use let twice with the same variable
+// let catName = "Pusi"
+catName = "Pusi"
