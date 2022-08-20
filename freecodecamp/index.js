@@ -371,4 +371,8 @@ function freezeObject() {
     } catch(ex) {
         console.log(ex)
     }
+    return MATH_CONSTANTS;
 }
+
+const PI = freezeObject();
+console.log(PI);
