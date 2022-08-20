@@ -405,5 +405,7 @@ const voxel = {
     z: 15.0
 }
 
-const { x:poso, y:kama, z:azil} = voxel 
-console.log(poso, kama, azil)
+// const { x:poso, y:kama, z:azil} = voxel 
+// console.log(poso, kama, azil)
+const { x, y, z } = voxel;
+console.log(x, y, z);
