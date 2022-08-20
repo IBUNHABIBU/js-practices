@@ -381,9 +381,16 @@ console.log(PI);
 // higher order function
 const sum = (function() {
     return function sum(...args) {
-        const args = [x,y,z]
         return args.reduce((a,b) => a + b, 0)
     }
 })()
 
 console.log(sum(1,2,3))
+
+const arr1 = ["Jan", "Feb", "March"]
+const arr2;
+(function(){
+    arr1 = arr2;
+    arr1[0] = "Monday"
+
+})()
