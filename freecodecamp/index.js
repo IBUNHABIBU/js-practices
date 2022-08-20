@@ -390,7 +390,10 @@ console.log(sum(1,2,3))
 const arr1 = ["Jan", "Feb", "March"]
 const arr2;
 (function(){
-    arr1 = arr2;
+    // spread out the content of arr1 to arr2
+    arr2 = [...arr1];
     arr1[0] = "Monday"
 
 })()
+
+console.log(arr2)
