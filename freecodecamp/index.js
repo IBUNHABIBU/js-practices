@@ -359,3 +359,8 @@ function editInPlace() {
     return s;
 }
 console.log(editInPlace());
+
+// object freeze to prevent mutation
+function freezeObject() {
+    
+}
