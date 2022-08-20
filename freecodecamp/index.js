@@ -333,6 +333,7 @@ let catName = "Quincy"
 let quote;
 
 //  you can not use let twice with the same variable
+// it is scopped
 // let catName = "Pusi"
 catName = "Pusi"
 function catTalk() {
