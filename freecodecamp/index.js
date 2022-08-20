@@ -336,12 +336,26 @@ let quote;
 // it is scopped
 // let catName = "Pusi"
 catName = "Pusi"
+
+// const is a read only var you can not reassign
+const GENDER = "male"
 function catTalk() {
     'use-strict';
     catName = "Oliver"
 
-    quote = catName + " Myeow !"
+    quote = catName + " Myeow !" + "he is a " + GENDER
     return quote;
 }
 
 console.log(catTalk());
+
+// mutate the array with const
+const s = [5,2,4]
+function editInPlace() {
+    "use-strict";
+    s[0] = 10;
+    s[1] = 20;
+    s[2] = 30;
+    return s;
+}
+console.log(editInPlace());
