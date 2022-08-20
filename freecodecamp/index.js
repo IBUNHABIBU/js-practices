@@ -335,3 +335,12 @@ let quote;
 //  you can not use let twice with the same variable
 // let catName = "Pusi"
 catName = "Pusi"
+function catTalk() {
+    'use-strict';
+    catName = "Oliver"
+
+    quote = catName + " Myeow !"
+    return quote;
+}
+
+console.log(catTalk());
