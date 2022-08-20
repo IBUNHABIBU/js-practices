@@ -377,3 +377,11 @@ const freezeObject = () => {
 
 const PI = freezeObject();
 console.log(PI);
+
+// higher order function
+const sum = (function() {
+    return function sum(...args) {
+        const args = [x,y,z]
+        return args.reduce()
+    }
+})
