@@ -313,3 +313,10 @@ function ourRandomRange (ourMin, ourMax) {
     return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
 }
 
+function convertToInteger(str, base = 10) {
+    return parseInt(str, base)
+}
+
+console.log(convertToInteger("4"))
+console.log(convertToInteger("1100100", 2))
+console.log(convertToInteger("1100100"))
