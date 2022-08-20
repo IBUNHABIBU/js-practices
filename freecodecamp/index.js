@@ -362,5 +362,13 @@ console.log(editInPlace());
 
 // object freeze to prevent mutation
 function freezeObject() {
-    
+    "use-strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+    try{
+        MATH_CONSTANTS.PI = 9.97
+    } catch(ex) {
+        console.log(ex)
+    }
 }
