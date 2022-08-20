@@ -379,7 +379,7 @@ const PI = freezeObject();
 console.log(PI);
 
 // higher order function
-const sum = (function() {
+var sum = (function() {
     return function sum(...args) {
         return args.reduce((a,b) => a + b, 0)
     }
@@ -388,7 +388,7 @@ const sum = (function() {
 console.log(sum(1,2,3))
 
 const arr1 = ["Jan", "Feb", "March"]
-const arr2;
+let arr2;
 (function(){
     // spread out the content of arr1 to arr2
     arr2 = [...arr1];
@@ -397,3 +397,13 @@ const arr2;
 })()
 
 console.log(arr2)
+
+// Object distructuring 
+const voxel = {
+    x: 7,
+    y: 1.3,
+    z: 15.0
+}
+
+const { x:poso, y:kama, z:azil} = voxel 
+console.log(poso, kama, azil)
