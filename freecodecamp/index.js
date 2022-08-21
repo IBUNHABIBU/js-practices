@@ -409,3 +409,14 @@ const voxel = {
 // console.log(poso, kama, azil)
 const { x, y, z } = voxel;
 console.log(x, y, z);
+
+const AVG_TEMPERATURES = {
+    today: 77.5,
+    tomorrow: 79
+}
+
+function getTempOfTmrw(avgTemperatures) {
+    "use-strict";
+    const { tomorrow: tempOfTomorrow } = avgTemperatures;
+    return tempOfTomorrow;
+}
