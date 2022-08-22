@@ -130,3 +130,11 @@ console.log(duje, biko)
 // destructuring with rest operator
 const [j, ...p] = [1,2,3,4,5]
 console.log(j,p)
+
+const source = [1,3,4,5,6,8]
+
+const removeFirstTwo = (list) => {
+    const [, , ...arr] = list;
+    return arr;
+}
+console.log(removeFirstTwo(source))
