@@ -162,4 +162,17 @@ const myBaby = {
     age: 4
 }
 
-const greeting = `my name is ${myBaby.name}`
+const greeting = `my name is ${myBaby.name} I'm the "Hero"
+            I am ${myBaby.age}`;
+
+const result = {
+    success:  ["max-length", "no-amd", "prefer-arrow-function"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["id-blacklist", "no-dup-keys"]
+}
+
+function makeList(arr) {
+
+}
+
+const resultDisplayArra = makeList(result.failure)
