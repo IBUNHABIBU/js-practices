@@ -126,3 +126,7 @@ let duje = 8, biko = 9;
     [duje, biko] = [biko, duje]
     })(duje, biko)
 console.log(duje, biko)
+
+// destructuring with rest operator
+const [j, ...p] = [1,2,3,4,5]
+console.log(j,p)
