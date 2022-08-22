@@ -190,3 +190,12 @@ const resultDisplayArray = makeList(result.failure)
 //     }
 // }
 const createPerson = (name, age, gender) => ({ name, age, gender })
+
+// use consince declarative function
+const bicycle = {
+    gear: 2,
+    setGear: function(newGear) {
+        "use-strict"
+        this.gear = newGear;
+    }
+}
