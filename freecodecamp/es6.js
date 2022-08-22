@@ -161,3 +161,5 @@ const myBaby = {
     name: "zuri",
     age: 4
 }
+
+const greeting = `my name is ${myBaby.name}`
