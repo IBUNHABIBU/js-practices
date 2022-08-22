@@ -19,9 +19,13 @@ class Book {
     constructor(author) {
         this._author = author;
     }
+
+    // getter
     get writter() {
         return this._author;
     }
+
+    // setter
     set writter(updateAuthor){
         this._author = updateAuthor;
     }
