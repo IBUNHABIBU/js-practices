@@ -14,3 +14,15 @@ class Car {
 }
 let saloon = new Car("benz")
 console.log(saloon.name)
+
+class Book {
+    constructor(author) {
+        this._author = author;
+    }
+    get writter() {
+        return this._author;
+    }
+    set writter(updateAuthor){
+        this._author = updateAuthor;
+    }
+}
