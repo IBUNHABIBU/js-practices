@@ -110,11 +110,19 @@ console.log(getMaxOfTmrw(LOCAL_FORECAST));
 // destructuring array
 const [a,b,c] = [1,2,3]
 console.log(a,b,c)
-const [d,e] = [1,2,3,4,5]
-console.log(d,e)
+const [d,e, ,k] = [1,2,3,4,5]
+console.log(d,e, k)
+
 const [f, ...g] = [1,2,3,4,5]
 console.log(f,g)
 
 // destructuring array with default values
 const [h = 1, i = 2] = [undefined, undefined]
 console.log(h,i)
+
+let duje = 8, biko = 9;
+((duje, biko) => {
+    "use-strict";
+    [duje, biko] = [biko, duje]
+    })(duje, biko)
+console.log(duje, biko)
