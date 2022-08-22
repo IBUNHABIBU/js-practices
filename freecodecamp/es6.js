@@ -155,3 +155,9 @@ const half = (function(){
 })()
 console.log(stats);
 console.log(half(stats));
+
+// create string using template literals
+const myBaby = {
+    name: "zuri",
+    age: 4
+}
