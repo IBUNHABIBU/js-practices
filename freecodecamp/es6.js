@@ -138,3 +138,18 @@ const removeFirstTwo = (list) => {
     return arr;
 }
 console.log(removeFirstTwo(source))
+
+const stats = {
+    max: 56.8,
+    standard_deviation: 4.34,
+    median: 35.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+}
+
+const half = (function(){
+    return function half(stats){
+        return (stats.max + stats.min)
+    }
+})
