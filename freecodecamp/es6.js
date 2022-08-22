@@ -150,6 +150,8 @@ const stats = {
 
 const half = (function(){
     return function half(stats){
-        return (stats.max + stats.min)
+        return (stats.max + stats.min) / 2.0
     }
-})
+})()
+console.log(stats);
+console.log(half(stats));
