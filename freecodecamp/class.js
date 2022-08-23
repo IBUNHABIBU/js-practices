@@ -53,3 +53,5 @@ let temp = thermos.temperature;
 thermos.temperature = 26;
 temp = thermos.temperature;
 console.log(temp)
+
+// import and export module
