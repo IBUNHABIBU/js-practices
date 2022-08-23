@@ -46,3 +46,10 @@ function makeClass(){
 
     return Thermostat;
 }
+
+let Thermostat = makeClass();
+let thermos = new Thermostat(76);
+let temp = thermos.temperature;
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp)
