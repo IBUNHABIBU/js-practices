@@ -30,3 +30,19 @@ class Book {
         this._author = updateAuthor;
     }
 }
+
+function makeClass(){
+    class Thermostat{
+        constructor(temp){
+            this._temp = 5/9 * (temp-32);
+        }
+        get temperature(){
+            return this._temp;
+        }
+        set temperature(temp){
+            this._temp = temp;
+        }
+    }
+
+    return Thermostat;
+}
