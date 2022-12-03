@@ -65,5 +65,22 @@ const smallestSubarray = (arr, s) => {
         return 0
     }
     return minLengthSoFar;
-    
 }
+
+console.log(smallestSubarray([1,3,2,2,4,5], 6))
+console.log(smallestSubarray([2,1,5,2,8], 7))
+
+
+/* 
+Given a string, find the length of the longest substring that contains no more 
+than k distinct characters 
+*/
+const lengthOfLongestSubstringWithKDistinctChars = (str, k) => {
+    let windowStart = 0, leterFrequencies = {}, longestSubstringSoFar = 0
+    for(let windowEnd = 0; windowEnd < str.length; windowEnd ++) {
+        
+    }
+}
+console.log(lengthOfLongestSubstringWithKDistinctChars("acccpbbebi", 3)) //7
+console.log(lengthOfLongestSubstringWithKDistinctChars("aaaabbcccd", 1)) // 4
+console.log(lengthOfLongestSubstringWithKDistinctChars("abcfg", 10)) // 5
