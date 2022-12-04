@@ -16,7 +16,7 @@ const naiveAvgOfSubArray = (arr, k) => {
     }
     return result;
 }
-
+console.log("**********************  naive avg of subarray **************************************")
 console.log(naiveAvgOfSubArray([1,2,3,4,5], 3))
 console.log(naiveAvgOfSubArray([1,3,2,6,-1,4, 1, 8, 2], 5))
 
@@ -38,7 +38,7 @@ const optimalAvgOfSubArray = (arr, k) => {
     }
     return avgs;
 }
-
+console.log("********************* Average of subarray **********************************")
 console.log(optimalAvgOfSubArray([1,2,3,4,5], 3))
 console.log(optimalAvgOfSubArray([1,3,2,6,-1,4, 1, 8, 2], 5))
 
@@ -67,6 +67,7 @@ const smallestSubarray = (arr, s) => {
     return minLengthSoFar;
 }
 
+console.log("************************** Smallest subarray *************************")
 console.log(smallestSubarray([1,3,2,2,4,5], 6))
 console.log(smallestSubarray([2,1,5,2,8], 7))
 
@@ -78,9 +79,26 @@ than k distinct characters
 const lengthOfLongestSubstringWithKDistinctChars = (str, k) => {
     let windowStart = 0, leterFrequencies = {}, longestSubstringSoFar = 0
     for(let windowEnd = 0; windowEnd < str.length; windowEnd ++) {
-        
+        let windowEndChar = str[windowEnd]
+        if(!leterFrequencies[windowEndChar]) {
+            leterFrequencies[windowEndChar] = 0
+        }
+        leterFrequencies[windowEndChar]++
+
+        while (Object.keys(leterFrequencies).length > k) {
+            let windowStartChar = str[windowStart]
+            leterFrequencies[windowStartChar]--
+
+            if(leterFrequencies[windowStartChar] === 0) {
+                delete leterFrequencies[windowStartChar]
+            }
+            windowStart++
+        }
+        longestSubstringSoFar = Math.max(longestSubstringSoFar, windowEnd-windowStart + 1)
     }
+    return longestSubstringSoFar;
 }
-console.log(lengthOfLongestSubstringWithKDistinctChars("acccpbbebi", 3)) //7
+console.log("  *********************************Longest substring  *********************************")
+console.log(lengthOfLongestSubstringWithKDistinctChars("acccpbbebi", 3)) //6
 console.log(lengthOfLongestSubstringWithKDistinctChars("aaaabbcccd", 1)) // 4
 console.log(lengthOfLongestSubstringWithKDistinctChars("abcfg", 10)) // 5
