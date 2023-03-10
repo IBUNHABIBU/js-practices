@@ -101,8 +101,44 @@ Algorithm
 */
 
 const findSmallestSubarray = (arr) => {
+    // 1. Initialize leftPointer at the start of the array and rightPointer at the end of the array
     let left = 0, right = arr.length - 1
+    // 2. Walk leftPointer forward until you get an element that is less than the previous element
+    while(arr[left] < arr[left + 1] && left < right){
+        left++;
+    }
 
+    // when the whole array is already sorted
+    if(left === right{
+        return 0;
+    }
+    // 3. Walk rightPointer backward until you get an element that is greater than the previous element
+    while(arr[right] > arr[right - 1] && right > 0) {
+        right--;
+    }
+
+    // 4. Find the minimum and maximum of the subarray between leftPointer and rightPointer
+          const subArray = arr.slice(left, right + 1)
+            const min = Math.min(...subArray)
+            const max = Math.max(...subArray)
+    
+    // 5. Extend the subarray to include any number which is bigger than the minimum of the subarray
+    while(arr[left-1] > min && left > 0) {
+        left--;
+    }
+
+    // 6. Extend the subarray to include any number which is smaller than the maximum of the subarray
+    while(arr[right + 1] < max && right < arr.length - 1) {
+        right++;
+    }
+    return right - left + 1;
 }
 
+
 console.log("Find smallest subarray that when sorted will sort the whole array")
+console.log(findSmallestSubarray([1, 3, 2, 0, -1, 7, 10])) // 5
+console.log(findSmallestSubarray([1, 2, 5, 7,3, 10, 11, 12])) //3
+console.log(findSmallestSubarray([1, 2, 10])) // 0
+console.log(findSmallestSubarray([4,3,2,1])) // 4
+console.log(findSmallestSubarray([12, 7, 8, 1, 2, 0, 10, 11])) // 8
+
