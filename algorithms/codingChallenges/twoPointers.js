@@ -88,8 +88,21 @@ console.log(findTriplets([-5, 2, -1, -2, 3]))
 /*
 Given an array of unsorted numbers. Find the length of the smallest subarray that when sorted
 will sort the whole array
+[1, 3, 2, 0, -1, 7, 10]
+*/
+/* 
+Algorithm
+  1. Initialize leftPointer at the start of the array and rightPointer at the end of the array
+  2. Walk leftPointer forward until you get an element that is less than the previous element
+  3. Walk rightPointer backward until you get an element that is greater than the previous element
+  4. Find the minimum and maximum of the subarray between leftPointer and rightPointer
+  5. Extend the subarray to include any number which is bigger than the minimum of the subarray
+  6. Extend the subarray to include any number which is smaller than the maximum of the subarray
 */
 
+const findSmallestSubarray = (arr) => {
+    let left = 0, right = arr.length - 1
 
+}
 
-
+console.log("Find smallest subarray that when sorted will sort the whole array")
