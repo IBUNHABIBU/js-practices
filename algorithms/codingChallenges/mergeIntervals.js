@@ -71,3 +71,13 @@ console.log(mergeInterval([[1,4], [2,5], [7,9]])) // [[1,5], [7,9]]
 console.log(mergeInterval([[6,7], [2,4], [5,9]])) // [[2,4], [5,9]]
 console.log(mergeInterval([[1,4], [2,6], [3,5]])) // [[1,6]]
     
+/* Given a list of job, each with a start time, end time,
+ and CPU load(while running),
+find the maximum CPU load at any time if all the jobs 
+are running on the same machine. */
+/* Jobs: [
+    { start: 1, end: 4, cpuLoad: 3 },
+    { start: 2, end: 5, cpuLoad: 4 },
+    { start: 7, end: 9, cpuLoad: 6 },
+]
+*/
