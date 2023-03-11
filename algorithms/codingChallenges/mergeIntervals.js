@@ -67,6 +67,7 @@ const mergeInterval = (intervals) => {
     }
     return mergedIntervals;
 }
+console.log("Merge Intervals:")
 console.log(mergeInterval([[1,4], [2,5], [7,9]])) // [[1,5], [7,9]]
 console.log(mergeInterval([[6,7], [2,4], [5,9]])) // [[2,4], [5,9]]
 console.log(mergeInterval([[1,4], [2,6], [3,5]])) // [[1,6]]
@@ -81,3 +82,58 @@ are running on the same machine. */
     { start: 7, end: 9, cpuLoad: 6 },
 ]
 */
+// Output: 7
+// Explanation: Since [1,4] and [2,5] overlap, their maximum CPU load (3+4=7) will be when both the
+// jobs are running at the same time i.e., during the time interval (2,4).
+
+const findMaxCPULoad = (jobs) => {
+    // 1. sort the jobs by start time
+    const sortedJobs = jobs.sort((a, b) => a.start - b.start)
+
+    // 2. initialize the stack to hold the merged jobs
+    const firstJob = sortedJobs.shift()
+    const mergedJobs = [firstJob]
+    let maxCPULoadSoFar = firstJob.cpuLoad
+
+    // 3. loop through the sorted jobs
+    while(sortedJobs.length > 0){
+        const a = mergedJobs.pop()
+        const b = sortedJobs.shift()
+
+        // 4. Check those 4 scenarios
+        // (i). a and b do not overlap and a comes before b
+        if(a.end < b.start){
+            mergedJobs.push(a)
+            mergedJobs.push(b)
+            maxCPULoadSoFar = Math.max(maxCPULoadSoFar, b.cpuLoad)
+        } else {
+            // merge a and b
+            const c = {}
+            c.start = a.start
+            c.end = Math.max(a.end, b.end)
+            c.cpuLoad = a.cpuLoad + b.cpuLoad
+            mergedJobs.push(c)
+            maxCPULoadSoFar = Math.max(maxCPULoadSoFar, c.cpuLoad)
+        }
+    }
+    return maxCPULoadSoFar;
+}
+
+console.log("Max CPU Load: ")
+
+console.log(findMaxCPULoad([
+    { start: 1, end: 4, cpuLoad: 3 },
+    { start: 2, end: 5, cpuLoad: 4 },
+    { start: 7, end: 9, cpuLoad: 6 },
+    ])) // 7
+console.log(findMaxCPULoad([
+    { start: 6, end: 7, cpuLoad: 10 },
+    { start: 2, end: 4, cpuLoad: 11 },
+    { start: 8, end: 12, cpuLoad: 15 },
+    ])) // 15
+
+console.log(findMaxCPULoad([
+    { start: 1, end: 4, cpuLoad: 2 },
+    { start: 2, end: 4, cpuLoad: 1 },
+    { start: 3, end: 6, cpuLoad: 5 },
+    ])) // 8
