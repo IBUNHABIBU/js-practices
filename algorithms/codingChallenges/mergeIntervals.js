@@ -160,8 +160,8 @@ const findFreeTime = (intervals) => {
 
         // 5. Check those 4 scenarios
         if(aEnd < bStart) {
-            mergeInterval.push(a)
-            mergeInterval.push(b)
+            mergedIntervals.push(a)
+            mergedIntervals.push(b)
         } else {
             const c = []
             c[0] = aStart
@@ -169,11 +169,21 @@ const findFreeTime = (intervals) => {
             mergedIntervals.push(c)
         }
     }
-  return newint
+    const freeTime = []
+
+    // 6. loop through the merged intervals
+    for(let i = 0; i < mergedIntervals.length - 1; i++){
+        const a = mergedIntervals[i]
+        const b = mergedIntervals[i + 1]
+        const [aStart, aEnd] = a
+        const [bStart, bEnd] = b
+        freeTime.push([aEnd, bStart])
+    }
+  return freeTime;
  }
  
  console.log("******************** Free interval *******************")
  console.log(findFreeTime([[[1,3], [5, 6]], [[2,3], [6,8]]])) // [[3,5]
  console.log(findFreeTime([[[1,3], [9, 12]], [[2,4], [6,8]]])) // [[4,6], [8,9]]
- console.log(findFreeTime([[[1,3], [2, 4]], [[3,5], [7,9]]])) // [[3,5]
+ console.log(findFreeTime([[[1,3], [2, 4]], [[3,5], [7,9]]])) // [[5, 7]
  
