@@ -11,3 +11,15 @@ mergeSortedList = (list) => {
   let combined = mergeTwoList(l1, l2)
  }
 }
+
+/* 
+Problem 3.
+    Given a list of intevals representing the working hours of each employee,
+    Find the free interval common to all employee    
+*/
+
+const findFreeTime = (intervals) => {
+
+}
+
+console.log(findFreeTime([])) // 
