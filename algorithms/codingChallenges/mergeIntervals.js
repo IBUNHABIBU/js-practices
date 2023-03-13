@@ -137,3 +137,43 @@ console.log(findMaxCPULoad([
     { start: 2, end: 4, cpuLoad: 1 },
     { start: 3, end: 6, cpuLoad: 5 },
     ])) // 8
+
+    /* 
+Problem 3.
+    Given a list of intevals representing the working hours of each employee,
+    Find the free interval common to all employee    
+*/
+
+const findFreeTime = (intervals) => {
+    // 1. flatten the intervals
+   const flattened =  intervals.flat()
+    // 2. sort the flattened intervals
+    const sorted = flattened.sort((a, b) => a[0] - b[0])
+    // 3. initialize the stack to hold the merged intervals
+    const mergedIntervals = [sorted.shift()]
+    // 4. loop through the sorted intervals
+    while(sorted.length > 0) {
+        const a = mergedIntervals.pop();
+        const b = sorted.shift();
+        const [aStart, aEnd] = a;
+        const [bStart, bEnd] = b;
+
+        // 5. Check those 4 scenarios
+        if(aEnd < bStart) {
+            mergeInterval.push(a)
+            mergeInterval.push(b)
+        } else {
+            const c = []
+            c[0] = aStart
+            c[1] = Math.max(aEnd, bEnd)
+            mergedIntervals.push(c)
+        }
+    }
+  return newint
+ }
+ 
+ console.log("******************** Free interval *******************")
+ console.log(findFreeTime([[[1,3], [5, 6]], [[2,3], [6,8]]])) // [[3,5]
+ console.log(findFreeTime([[[1,3], [9, 12]], [[2,4], [6,8]]])) // [[4,6], [8,9]]
+ console.log(findFreeTime([[[1,3], [2, 4]], [[3,5], [7,9]]])) // [[3,5]
+ 
