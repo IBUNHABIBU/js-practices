@@ -46,8 +46,15 @@ const hasCycle = (head) => {
 
   // while the fast pointer is still in the linked list
   while(fast !== null && fast.next !== null) {
-    
+    slow = slow.next;
+    fast = fast.next.next;
+
+    // if the fast pointer is equal to the slow pointer, there is a cycle
+    if(slow === fast) {
+      return true;
+    }
   }
+  return false;
 }
 
 const node6 = new Node(6);
