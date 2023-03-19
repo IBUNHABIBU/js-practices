@@ -156,13 +156,43 @@ const circularArray = (arr) => {
 
       slow = findNextIndex(arr, isFoward, slow)
       fast = findNextIndex(arr, isFoward, fast)
-      fast = findNextIndex(arr, isFoward, fast)
+      if(fast !== -1){
+        fast = findNextIndex(arr, isFoward, fast)
+      }
 
+      if(fast === -1 || slow === -1 || slow === fast) break;
+
+      if(fast !== -1 && slow !== -1 && slow === fast) return true;
     }
   }
+
+  return false;
 }
 
 const findNextIndex = (arr, isFoward, currIndex) => {
   const currIsForward = arr[currIndex] > 0
 
+  // if next direction is different than the current direction
+  // there is no cycle return false
+  if (currIsForward !== isFoward) {
+    return -1;
+  }
+
+  const nextIndex = (currIndex + arr[currIndex]) % arr.length;
+
+  if(nextIndex < 0 ) {
+    nextIndex += arr.length;
+  } 
+
+  // we don't go anywhere can't have 1 element in a cycle
+  if(nextIndex === currIndex) {
+    return -1;
+  }
+
+  return nextIndex;
 }
+
+console.log("************* CICRULAR ARRAY *********************")
+console.log(circularArray([1,2,-1,2,2]))
+console.log(circularArray([2,2,-1,2]))
+console.log(circularArray([2,1,-1,2]))
