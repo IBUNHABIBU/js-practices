@@ -1,5 +1,5 @@
 const mergeTwoList = (l1, l2) => {
- let list = new List
+ let list = new List()
  
 }
 

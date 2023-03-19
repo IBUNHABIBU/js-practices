@@ -132,3 +132,21 @@ console.log(squareDigitSumTo1(3))
 console.log(squareDigitSumTo1(12))
 console.log(squareDigitSumTo1(100))
 console.log(squareDigitSumTo1(456))
+
+/*
+    Problem 3:
+    You are given an array of both positive and negative numbers. Suppose the array 
+    contains a number m at a particular index. If m is positive we will move 
+    forward m indices if m is a negative move backward m indeces.
+    Write a method to determine if the array has a cycle. 
+
+    Note: The cycle should have more than one element and should follow one direction 
+    which means the cycle should not contain both forward and backward movement.
+*/
+
+const circularArray = (arr) => {
+  for(let i = 0; i < arr.length; i++) {
+    let slow = i, fast = i;
+    
+  }
+}
