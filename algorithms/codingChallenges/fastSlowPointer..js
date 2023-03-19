@@ -88,6 +88,47 @@ const nodeRed = new Node('red', nodeGreen);
 const nodeBlack = new Node('black', nodeRed);
 const head3 = new Node('white', nodeBlack);
 
+console.log("***************** Has a cycle **************")
 console.log(hasCycle(head3)); // false
 
 console.log(hasCycle(head2)); // true
+
+
+/* Problem 2:
+      Given an interger , write a function to detemine if after repeatedly 
+      replacing it with an integer equal to the sum 
+      of square of all of its digits, leads us to the number 1.
+/*/
+
+/* 
+    Algorithm
+
+*/
+
+const squareDigitSumTo1 = (num) => {
+  let slow = num, fast = num;
+  while(true) {
+    slow = findSquareSum(slow)
+    fast = findSquareSum(findSquareSum(fast))
+
+    if(slow === fast) return false;
+    if(slow ===1 || fast === 1) return true;
+  }
+}
+
+const findSquareSum = (num) => {
+  let sum = 0
+  while(num > 0) {
+    let digit = num % 10
+    sum += digit * digit;
+    num = Math.floor(num/10)
+  }
+  return sum;
+}
+
+console.log("********************** Find square sum ************************")
+console.log(squareDigitSumTo1(23))
+console.log(squareDigitSumTo1(3))
+console.log(squareDigitSumTo1(12))
+console.log(squareDigitSumTo1(100))
+console.log(squareDigitSumTo1(456))
