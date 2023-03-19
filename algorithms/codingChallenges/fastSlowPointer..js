@@ -147,6 +147,22 @@ console.log(squareDigitSumTo1(456))
 const circularArray = (arr) => {
   for(let i = 0; i < arr.length; i++) {
     let slow = i, fast = i;
-    
+
+    const isFoward = arr[i] > 0
+
+    while(true) {
+      // move slow pointer 1 time
+      // move fast pointer 2 times
+
+      slow = findNextIndex(arr, isFoward, slow)
+      fast = findNextIndex(arr, isFoward, fast)
+      fast = findNextIndex(arr, isFoward, fast)
+
+    }
   }
+}
+
+const findNextIndex = (arr, isFoward, currIndex) => {
+  const currIsForward = arr[currIndex] > 0
+
 }
