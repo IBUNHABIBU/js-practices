@@ -7,6 +7,12 @@
 */
 
 /*
+
+   Problem: 1
+Given an array  of scrambled numbers from 1...n, write a function to sort the numbers
+in place in O(n) time without using any extra space
+
+   Algorithm: 
 /Because we know we have all the numbers in the range of 1..n, we can loop 
 through the array, swapping numbers with number in its appropriate index in the array
 until we sort the entire array.
