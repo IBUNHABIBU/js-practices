@@ -17,3 +17,12 @@ in place in O(n) time without using any extra space
 through the array, swapping numbers with number in its appropriate index in the array
 until we sort the entire array.
 */
+
+const cyclicSort = (arr) => {
+  
+}
+
+
+console.log(cyclicSort([3,1,5,4,2]))
+console.log(cyclicSort([2,6,4,3,1,5]))
+console.log(cyclicSort([1,5,6,4,3,2]))
