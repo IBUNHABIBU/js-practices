@@ -28,11 +28,14 @@
 
 const wordSearch = (board, word) => {
     // a map to keep track of visited cells
-    const isUsed = board.map(row => row.map(_ => false));
+    const isUsed = board.map(row => row.map(cell => false));
     const target = word.split('');
     const current = [];
     const walk = (i,j) => {
-
+     
+      if (board[i][j] === target[0]) {
+        current.push(target.shift());
+      }
     }
     console.log(target)
     return false;
