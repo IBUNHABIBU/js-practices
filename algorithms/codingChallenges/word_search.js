@@ -27,5 +27,6 @@
 // }
 
 const wordSearch = (board, word) => {
-    //
+    // a map to keep track of visited cells
+    
 }
