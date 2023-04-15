@@ -26,6 +26,7 @@
 //     return found;
 // }
 
+const directions = [[0,1], [0,-1], [1,0], [-1,0]];
 const wordSearch = (board, word) => {
     // a map to keep track of visited cells
     const isUsed = board.map(row => row.map(cell => false));
@@ -37,6 +38,8 @@ const wordSearch = (board, word) => {
      // check if the letter is what we are looking for
       if (board[i][j] === target[0]) {
         current.push(target.shift());
+
+        // check if we found the word
         if(target.length === 0) {
           isFound = true;
           return;
