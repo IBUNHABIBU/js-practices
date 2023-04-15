@@ -28,5 +28,14 @@
 
 const wordSearch = (board, word) => {
     // a map to keep track of visited cells
-    
+    const isUsed = board.map(row => row.map(_ => false));
+
+    console.log(isUsed);
 }
+
+console.log(wordSearch([
+    ['A','B','C','E'],
+    ['S','F','C','S'],
+    ['A','D','E','E']
+    ], 'ABCCED'))
+    
