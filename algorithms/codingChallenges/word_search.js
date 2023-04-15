@@ -1,0 +1,3 @@
+const wordSearch = (board, word) => {
+    
+}
