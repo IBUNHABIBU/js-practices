@@ -25,3 +25,7 @@
 //     board[i][j] = word[index];
 //     return found;
 // }
+
+const wordSearch = (board, word) => {
+    //
+}
