@@ -32,7 +32,7 @@ const wordSearch = (board, word) => {
     const target = word.split('');
     const current = [];
     const walk = (i,j) => {
-     
+     // check if the letter is what we are looking for
       if (board[i][j] === target[0]) {
         current.push(target.shift());
       }
