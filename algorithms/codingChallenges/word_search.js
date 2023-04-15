@@ -33,6 +33,7 @@ const wordSearch = (board, word) => {
     const current = [];
     let isFound = false;
     const walk = (i,j) => {
+        if(isUsed[i][j]) return;
      // check if the letter is what we are looking for
       if (board[i][j] === target[0]) {
         current.push(target.shift());
