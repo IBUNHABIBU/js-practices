@@ -37,7 +37,10 @@ const wordSearch = (board, word) => {
      // check if the letter is what we are looking for
       if (board[i][j] === target[0]) {
         current.push(target.shift());
-
+        if(target.length === 0) {
+          isFound = true;
+          return;
+        }
         // continue the next walk
       }
     }
