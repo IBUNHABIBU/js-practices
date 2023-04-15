@@ -31,7 +31,7 @@ const wordSearch = (board, word) => {
     const isUsed = board.map(row => row.map(_ => false));
     const target = word.split('');
     const current = [];
-    const walk = () => {
+    const walk = (i,j) => {
 
     }
     console.log(target)
