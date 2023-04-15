@@ -29,8 +29,13 @@
 const wordSearch = (board, word) => {
     // a map to keep track of visited cells
     const isUsed = board.map(row => row.map(_ => false));
+    const target = word.split('');
+    const current = [];
+    const walk = () => {
 
-    const walk = 
+    }
+    console.log(target)
+    return false;
 }
 
 console.log(wordSearch([
