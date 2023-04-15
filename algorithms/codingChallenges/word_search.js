@@ -31,6 +31,7 @@ const wordSearch = (board, word) => {
     const isUsed = board.map(row => row.map(cell => false));
     const target = word.split('');
     const current = [];
+    let isFound = false;
     const walk = (i,j) => {
      // check if the letter is what we are looking for
       if (board[i][j] === target[0]) {
@@ -40,7 +41,7 @@ const wordSearch = (board, word) => {
       }
     }
     console.log(target)
-    return false;
+    return isFound;
 }
 
 console.log(wordSearch([
