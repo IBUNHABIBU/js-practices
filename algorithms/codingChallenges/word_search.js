@@ -45,6 +45,9 @@ const wordSearch = (board, word) => {
           return;
         }
         // continue the next walk
+        for(let direction of directions) {
+            
+        }
       }
     }
     console.log(target)
